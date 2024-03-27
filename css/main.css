@@ -22,6 +22,10 @@ p {
 	letter-spacing: 0.1em;
 }
 
+button, a {
+	-webkit-tap-highlight-color: transparent;
+}
+
 
 /* FONTS */
 
@@ -33,4 +37,69 @@ p {
 @font-face {
 	font-family: 'Coolvetica Italic';
 	src: url('/fonts/coolvetica rg it.otf') format('truetype');
+}
+
+
+/* MENU */
+
+#menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	margin: 15px;
+	background: none;
+	border: none;
+	cursor: pointer;
+	z-index: 3;
+}
+
+#menu.clicked {
+	animation: buttonClick 0.3s;
+}
+
+#menu-img {
+	width: 30px;
+	height: 30px;
+}
+
+#menu-panel {
+	position: fixed;
+	top: 0;
+	left: -300px;
+	width: 300px;
+	height: 100%;
+	background-color: black;
+	transition: left 0.8s ease;
+	z-index: 2;
+	overflow: hidden;
+	opacity: 0.8;
+}
+
+#wave {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 100%;
+	fill: black;
+	transition: left 0.8s ease;
+	z-index: -1;
+	overflow: hidden;
+	opacity: 0.8;
+}
+
+#wave-path {
+	animation: wave 3s infinite linear;
+}
+
+@keyframes wave {
+	0% { transform: translateY(0); }
+	50% { transform: translateY(-20px); }
+	100% { transform: translateY(0); }
+}
+
+@keyframes buttonClick {
+	0% { transform: scale(1); }
+	50% { transform: scale(0.8); }
+	100% { transform: scale(1); }
 }
