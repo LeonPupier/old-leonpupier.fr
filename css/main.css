@@ -1,0 +1,36 @@
+/* GLOBAL STYLES */
+
+* {
+	margin: 0;
+	padding: 0;
+	user-select: none;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Coolvetica Italic', sans-serif;
+	color: #333;
+	background-color: #f0f0f0;
+}
+
+h1 {
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+}
+
+p {
+	letter-spacing: 0.1em;
+}
+
+
+/* FONTS */
+
+@font-face {
+	font-family: 'Coolvetica';
+	src: url('/fonts/coolvetica rg.otf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Coolvetica Italic';
+	src: url('/fonts/coolvetica rg it.otf') format('truetype');
+}
