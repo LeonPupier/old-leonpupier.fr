@@ -5,12 +5,14 @@
 	padding: 0;
 	user-select: none;
 	box-sizing: border-box;
+	cursor: none;
 }
 
 body {
 	font-family: 'Coolvetica Italic', sans-serif;
 	color: #333;
 	background-color: #f0f0f0;
+	overflow: hidden;
 }
 
 h1 {
@@ -50,6 +52,22 @@ a {
 }
 
 
+/* CUSTOM CURSOR */
+
+#custom-cursor {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s ease;
+	box-sizing: border-box;
+	background: white;
+	mix-blend-mode: difference;
+}
+
+
 /* MENU */
 
 #menu {
@@ -59,7 +77,6 @@ a {
 	margin: 15px;
 	background: none;
 	border: none;
-	cursor: pointer;
 	z-index: 3;
 }
 

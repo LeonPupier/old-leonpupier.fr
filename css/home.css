@@ -56,3 +56,23 @@
 	color: white;
 	opacity: 0.5;
 }
+
+#scroll-img {
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	opacity: 0.5;
+	margin-bottom: 20px;
+	animation: moveUpDown 2s ease-in-out infinite;
+}
+
+@keyframes moveUpDown {
+	0%, 100% {
+		transform: translateX(-50%) translateY(0);
+	}
+	50% {
+		transform: translateX(-50%) translateY(-20px);
+	}
+}

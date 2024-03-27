@@ -96,6 +96,24 @@ window.addEventListener('DOMContentLoaded', (event) => {
 		router.navigate(window.location.pathname);
 	}
 
+
+	// Handle the custom cursor
+	var cursor = document.getElementById('custom-cursor');
+
+	document.addEventListener('mousemove', function(e) {
+		cursor.style.left = (e.clientX - cursor.offsetWidth / 2) + 'px';
+		cursor.style.top = (e.clientY - cursor.offsetHeight / 2) + 'px';
+	});
+
+	document.addEventListener('mousedown', function() {
+		cursor.style.transform = 'scale(0.5)';
+	});
+
+	document.addEventListener('mouseup', function() {
+		cursor.style.transform = 'scale(1)';
+	});
+
+
 	// Handle the menu button
 	document.getElementById('menu').addEventListener('click', function() {
 		this.classList.remove('clicked');
