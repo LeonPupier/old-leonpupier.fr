@@ -126,4 +126,24 @@ window.addEventListener('DOMContentLoaded', (event) => {
 			wave.style.transition = 'left 0.25s linear';
 		}
 	});
+
+	document.body.addEventListener('click', function(event) {
+		var img = document.getElementById('menu-img');
+		var panel = document.getElementById('menu-panel');
+		var wave = document.getElementById('wave');
+		var style = window.getComputedStyle(panel);
+	
+		// If the menu is open and the user clicks outside the menu, close it
+		if (style.left === '0px' && !panel.contains(event.target) && !event.target.matches('#menu')) {
+			panel.addEventListener('transitionend', function hideWave() {
+				wave.style.zIndex = '-1';
+				panel.removeEventListener('transitionend', hideWave);
+			});
+			img.src = 'img/menuOpen.svg';
+			panel.style.left = '-300px';
+			panel.style.transition = 'left 0.25s linear';
+			wave.style.left = '0px';
+			wave.style.transition = 'left 0.25s linear';
+		}
+	});
 });
