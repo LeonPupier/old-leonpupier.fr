@@ -18,12 +18,22 @@ h1 {
 	text-transform: uppercase;
 }
 
+h2 {
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+}
+
 p {
 	letter-spacing: 0.1em;
 }
 
 button, a {
 	-webkit-tap-highlight-color: transparent;
+}
+
+a {
+	display: flex;
+	text-decoration: none;
 }
 
 
@@ -68,11 +78,42 @@ button, a {
 	left: -300px;
 	width: 300px;
 	height: 100%;
-	background-color: black;
+	background-color: rgba(0, 0, 0, 0.8);
 	transition: left 0.8s ease;
 	z-index: 2;
 	overflow: hidden;
-	opacity: 0.8;
+}
+
+#menu-content {
+	margin-top: 60px;
+	margin-left: 60px;
+	color: white;
+}
+
+#menu-content h3 {
+	margin-top: 50px;
+	opacity: 0.7;
+}
+
+#menu-content a {
+	margin-top: 7px;
+	opacity: 0.7;
+	transition: color 0.3s ease, transform 0.3s ease;
+	transform-origin: left;
+}
+
+#menu-content a:hover {
+	opacity: 1;
+    transform: scale(1.2);
+}
+
+#credits {
+	position: absolute;
+	bottom: 0;
+	text-align: left;
+	margin-bottom: 10px;
+	opacity: 0.5;
+	font-size: 0.8em;
 }
 
 #wave {

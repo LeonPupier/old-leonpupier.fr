@@ -87,6 +87,7 @@ window.addEventListener('popstate', function(event) {
 // --------------------------------------------------------------------------------
 
 window.addEventListener('DOMContentLoaded', (event) => {
+	// Render the home page
 	if (sessionStorage.redirect) {
 		const redirectURL = sessionStorage.redirect;
 		delete sessionStorage.redirect;
@@ -101,12 +102,16 @@ window.addEventListener('DOMContentLoaded', (event) => {
 		void this.offsetWidth;
 		this.classList.add('clicked');
 
+		var img = document.getElementById('menu-img');
 		var panel = document.getElementById('menu-panel');
 		var wave = document.getElementById('wave');
 		var style = window.getComputedStyle(panel);
 
 		if (style.left === '-300px') {
+			img.src = 'img/menuClose.svg';
+			panel.style.transition = 'left 0.8s ease';
 			panel.style.left = '0px';
+			wave.style.transition = 'left 0.8s ease';
 			wave.style.left = '300px';
 			wave.style.zIndex = '2';
 		} else {
@@ -114,8 +119,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
 				wave.style.zIndex = '-1';
 				panel.removeEventListener('transitionend', hideWave);
 			});
+			img.src = 'img/menuOpen.svg';
 			panel.style.left = '-300px';
+			panel.style.transition = 'left 0.25s linear';
 			wave.style.left = '0px';
+			wave.style.transition = 'left 0.25s linear';
 		}
 	});
 });
