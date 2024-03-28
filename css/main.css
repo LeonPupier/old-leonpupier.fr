@@ -43,6 +43,7 @@ button, a {
 a {
 	display: flex;
 	text-decoration: none;
+	color: white;
 }
 
 
@@ -139,6 +140,21 @@ a {
 #menu-content a:hover {
 	opacity: 1;
 	transform: scale(1.2);
+}
+
+#menu-contact-img {
+	width: 15px;
+	height: 15px;
+	margin-right: 10px;
+}
+
+#external-link:hover::after {
+	content: "";
+	display: inline-block;
+	background: url('/img/externalLink.svg') no-repeat center/contain;
+	width: 12px;
+	height: 12px;
+	margin-left: 5px;
 }
 
 #credits {
