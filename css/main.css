@@ -6,6 +6,8 @@
 	user-select: none;
 	box-sizing: border-box;
 	cursor: none;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
 }
 
 body {
@@ -21,6 +23,11 @@ h1 {
 }
 
 h2 {
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+}
+
+h3 {
 	letter-spacing: 0.2em;
 	text-transform: uppercase;
 }
@@ -55,16 +62,25 @@ a {
 /* CUSTOM CURSOR */
 
 #custom-cursor {
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    position: absolute;
-    pointer-events: none;
-    z-index: 9999;
-    transition: transform 0.1s ease;
+	display: none;
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	position: absolute;
+	pointer-events: none;
+	z-index: 9999;
+	transition: transform 0.1s ease;
 	box-sizing: border-box;
 	background: white;
 	mix-blend-mode: difference;
+}
+
+/* Media Query */
+
+@media screen and (min-width: 768px) {
+	#custom-cursor {
+		display: block;
+	}
 }
 
 
@@ -104,6 +120,7 @@ a {
 #menu-content {
 	margin-top: 60px;
 	margin-left: 60px;
+	margin-bottom: 60px;
 	color: white;
 }
 
@@ -121,24 +138,22 @@ a {
 
 #menu-content a:hover {
 	opacity: 1;
-    transform: scale(1.2);
+	transform: scale(1.2);
 }
 
 #credits {
-	position: absolute;
-	bottom: 0;
+	margin-top: 60px;
 	text-align: left;
-	margin-bottom: 10px;
 	opacity: 0.5;
 	font-size: 0.8em;
 }
 
 #wave {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 150px;
-    height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 150px;
+	height: 100%;
 	fill: black;
 	transition: left 0.8s ease;
 	z-index: -1;

@@ -100,18 +100,30 @@ window.addEventListener('DOMContentLoaded', (event) => {
 	// Handle the custom cursor
 	var cursor = document.getElementById('custom-cursor');
 
-	document.addEventListener('mousemove', function(e) {
-		cursor.style.left = (e.clientX - cursor.offsetWidth / 2) + 'px';
-		cursor.style.top = (e.clientY - cursor.offsetHeight / 2) + 'px';
-	});
+	if (window.matchMedia("(min-width: 768px)").matches) {
+		document.addEventListener('mousemove', function(e) {
+			cursor.style.left = (e.clientX - cursor.offsetWidth / 2) + 'px';
+			cursor.style.top = (e.clientY - cursor.offsetHeight / 2) + 'px';
+		});
 
-	document.addEventListener('mousedown', function() {
-		cursor.style.transform = 'scale(0.5)';
-	});
+		document.addEventListener('mousedown', function() {
+			cursor.style.transform = 'scale(0.5)';
+		});
 
-	document.addEventListener('mouseup', function() {
-		cursor.style.transform = 'scale(1)';
-	});
+		document.addEventListener('mouseup', function() {
+			cursor.style.transform = 'scale(1)';
+		});
+
+		document.addEventListener('mouseout', function(event) {
+			if (!event.toElement && !event.relatedTarget) {
+				cursor.style.display = 'none';
+			}
+		});
+		
+		document.addEventListener('mouseover', function() {
+			cursor.style.display = 'block';
+		});
+	}
 
 
 	// Handle the menu button
