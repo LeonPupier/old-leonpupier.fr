@@ -17,7 +17,34 @@
 	align-items: center;
 	height: 100vh;
 	text-align: center;
-	overflow: auto;
+	overflow: hidden;
+}
+
+.section::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(252, 252, 252, 0.8);
+	z-index: -1;
+}
+
+.section.even::before {
+    transform: skewY(-10deg) translateX(100%);
+}
+
+.section.odd::before {
+    transform: skewY(10deg) translateX(-100%);
+}
+
+.section.even.animate::before {
+    animation: drawRibbonEven 1s forwards;
+}
+
+.section.odd.animate::before {
+    animation: drawRibbonOdd 1s forwards;
 }
 
 .section-content {
@@ -25,7 +52,10 @@
 	width: 80%;
 	z-index: 1;
 	opacity: 0;
-	animation: fadeIn 1s 1s forwards;
+}
+
+.show-text {
+	animation: fadeIn 1s forwards;
 }
 
 @keyframes fadeIn {
@@ -52,13 +82,22 @@
 	animation: drawRibbon 1s forwards;
 }
 
-@keyframes drawRibbon {
-	from {
-		transform: skewY(-10deg) translateX(100%);
-	}
-	to {
-		transform: skewY(-10deg) translateX(0);
-	}
+@keyframes drawRibbonEven {
+    from {
+        transform: skewY(-10deg) translateX(100%);
+    }
+    to {
+        transform: skewY(-10deg) translateX(0);
+    }
+}
+
+@keyframes drawRibbonOdd {
+    from {
+        transform: skewY(10deg) translateX(-100%);
+    }
+    to {
+        transform: skewY(10deg) translateX(0);
+    }
 }
 
 #user-img {
@@ -66,6 +105,12 @@
 	height: 125px;
 	border-radius: 50%;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#projects-img {
+	width: 94px;
+	height: 94px;
+	border-radius: 0;
 }
 
 #scroll-img {

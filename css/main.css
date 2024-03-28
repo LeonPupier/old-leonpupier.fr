@@ -53,6 +53,15 @@ a {
 	color: white;
 }
 
+#paragraph {
+	text-align: left;
+	text-justify: inter-word;
+}
+
+#paragraph-sign {
+	text-align: right;
+}
+
 
 /* FONTS */
 
