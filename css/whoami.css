@@ -32,19 +32,19 @@
 }
 
 .section.even::before {
-    transform: skewY(-10deg) translateX(100%);
+	transform: skewY(-10deg) translateX(100%);
 }
 
 .section.odd::before {
-    transform: skewY(10deg) translateX(-100%);
+	transform: skewY(10deg) translateX(-100%);
 }
 
 .section.even.animate::before {
-    animation: drawRibbonEven 1s forwards;
+	animation: drawRibbonEven 1s forwards;
 }
 
 .section.odd.animate::before {
-    animation: drawRibbonOdd 1s forwards;
+	animation: drawRibbonOdd 1s forwards;
 }
 
 .section-content {
@@ -83,21 +83,21 @@
 }
 
 @keyframes drawRibbonEven {
-    from {
-        transform: skewY(-10deg) translateX(100%);
-    }
-    to {
-        transform: skewY(-10deg) translateX(0);
-    }
+	from {
+		transform: skewY(-10deg) translateX(100%);
+	}
+	to {
+		transform: skewY(-10deg) translateX(0);
+	}
 }
 
 @keyframes drawRibbonOdd {
-    from {
-        transform: skewY(10deg) translateX(-100%);
-    }
-    to {
-        transform: skewY(10deg) translateX(0);
-    }
+	from {
+		transform: skewY(10deg) translateX(-100%);
+	}
+	to {
+		transform: skewY(10deg) translateX(0);
+	}
 }
 
 #user-img {
@@ -144,12 +144,21 @@
 		transform: skewY(-20deg) translateX(100%);
 	}
 
-	@keyframes drawRibbon {
+	@keyframes drawRibbonEven {
 		from {
 			transform: skewY(-20deg) translateX(100%);
 		}
 		to {
 			transform: skewY(-20deg) translateX(0);
+		}
+	}
+	
+	@keyframes drawRibbonOdd {
+		from {
+			transform: skewY(20deg) translateX(-100%);
+		}
+		to {
+			transform: skewY(20deg) translateX(0);
 		}
 	}
 }

@@ -43,26 +43,26 @@ function renderWhoAmIPage() {
 	`;
 
 	const sections = document.querySelectorAll('.section');
-    sections.forEach((section, index) => {
-        // Add 'even' or 'odd' class based on the index
-        section.classList.add(index % 2 === 0 ? 'even' : 'odd');
-    });
+	sections.forEach((section, index) => {
+		// Add 'even' or 'odd' class based on the index
+		section.classList.add(index % 2 === 0 ? 'even' : 'odd');
+	});
 
-    // Handle the animation of the sections
-    window.addEventListener('scroll', function() {
-        sections.forEach((section, index) => {
-            const sectionTop = section.getBoundingClientRect().top;
-            const sectionBottom = section.getBoundingClientRect().bottom;
-            if (sectionTop <= window.innerHeight && sectionBottom >= 0) {
-                section.classList.add('animate');
-                if (index !== 0 || sectionBottom >= window.innerHeight) {
-                    setTimeout(function() {
-                        section.querySelector('.section-content').classList.add('show-text');
-                    }, 1000);
-                }
-            }
-        });
-    });
+	// Handle the animation of the sections
+	window.addEventListener('scroll', function() {
+		sections.forEach((section, index) => {
+			const sectionTop = section.getBoundingClientRect().top;
+			const sectionBottom = section.getBoundingClientRect().bottom;
+			if (sectionTop <= window.innerHeight && sectionBottom >= 0) {
+				section.classList.add('animate');
+				if (index !== 0 || sectionBottom >= window.innerHeight) {
+					setTimeout(function() {
+						section.querySelector('.section-content').classList.add('show-text');
+					}, 1000);
+				}
+			}
+		});
+	});
 
 	// Trigger the text animation for the first section immediately
 	setTimeout(function() {
@@ -104,5 +104,31 @@ function renderWhoAmIPage() {
 		}
 
 		scrollSection(currentSectionIndex);
+	}, { passive: false });
+
+	// Handle the scroll down on mobile
+	let startTouchY;
+
+	window.addEventListener('touchstart', function(e) {
+		startTouchY = e.touches[0].clientY;
+	}, { passive: false });
+
+	window.addEventListener('touchmove', function(e) {
+		if (isScrolling) return;
+		e.preventDefault();
+
+		const touchY = e.touches[0].clientY;
+		const touchYDelta = startTouchY - touchY;
+
+		if (touchYDelta > 0) {
+			// Scrolling down
+			currentSectionIndex = Math.min(currentSectionIndex + 1, sections.length - 1);
+		} else {
+			// Scrolling up
+			currentSectionIndex = Math.max(currentSectionIndex - 1, 0);
+		}
+
+		scrollSection(currentSectionIndex);
+		startTouchY = touchY;
 	}, { passive: false });
 }
