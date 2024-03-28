@@ -12,7 +12,7 @@
 
 body {
 	font-family: 'Coolvetica Italic', sans-serif;
-	color: #333;
+	color: black;
 	background-color: #f0f0f0;
 	overflow: hidden;
 }
@@ -34,6 +34,13 @@ h3 {
 
 p {
 	letter-spacing: 0.1em;
+}
+
+p span, h2 span {
+	background: linear-gradient(270deg, #ff0000, #0000ff);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 button, a {
@@ -67,7 +74,7 @@ a {
 	width: 18px;
 	height: 18px;
 	border-radius: 50%;
-	position: absolute;
+	position: fixed;
 	pointer-events: none;
 	z-index: 9999;
 	transition: transform 0.1s ease;
@@ -109,7 +116,7 @@ a {
 #menu-panel {
 	position: fixed;
 	top: 0;
-	left: -300px;
+	left: -450px;
 	width: 300px;
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0.8);
@@ -169,6 +176,15 @@ a {
 	margin-left: 5px;
 }
 
+#external-link-text:hover::after {
+	content: "";
+	display: inline-block;
+	background: url('/img/externalLinkDark.svg') no-repeat center/contain;
+	width: 12px;
+	height: 12px;
+	margin-left: 5px;
+}
+
 #credits {
 	margin-top: 60px;
 	text-align: left;
@@ -179,13 +195,12 @@ a {
 #wave {
 	position: fixed;
 	top: 0;
-	left: 0;
+	left: -150px;
 	width: 150px;
 	height: 100%;
 	fill: black;
 	transition: left 0.8s ease;
-	z-index: -1;
-	overflow: hidden;
+	z-index: 2;
 	opacity: 0.8;
 }
 

@@ -1,5 +1,5 @@
 function renderHomePage() {
-	// Set the inner HTML of the main content
+	
 	document.getElementById('app').innerHTML = `
 		<div id="animated-background"></div>
 

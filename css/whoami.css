@@ -1,0 +1,110 @@
+/* WHO AM I */
+
+#background-whoami {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	background: linear-gradient(270deg, #ff0000, #0000ff);
+	background-size: 200% 200%;
+	animation: Gradient 5s ease infinite;
+}
+
+.section {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	text-align: center;
+	overflow: auto;
+}
+
+.section-content {
+	position: relative;
+	width: 80%;
+	z-index: 1;
+	opacity: 0;
+	animation: fadeIn 1s 1s forwards;
+}
+
+@keyframes fadeIn {
+	to {
+		opacity: 1;
+	}
+}
+
+.section-content h2 {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.section:first-child::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(252, 252, 252, 0.8);
+	transform: skewY(-10deg) translateX(100%);
+	z-index: -1;
+	animation: drawRibbon 1s forwards;
+}
+
+@keyframes drawRibbon {
+	from {
+		transform: skewY(-10deg) translateX(100%);
+	}
+	to {
+		transform: skewY(-10deg) translateX(0);
+	}
+}
+
+#user-img {
+	width: 125px;
+	height: 125px;
+	border-radius: 50%;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#scroll-img {
+	width: 35px;
+	height: 35px;
+	margin-top: 50px;
+}
+
+#scroll-img {
+	animation: scroll 1.5s infinite;
+}
+
+@keyframes scroll {
+	0% {
+		transform: translateY(0);
+	}
+
+	50% {
+		transform: translateY(10px);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+}
+
+/* Media Query */
+
+@media screen and (max-width: 768px) {
+	.section:first-child::before {
+		transform: skewY(-20deg) translateX(100%);
+	}
+
+	@keyframes drawRibbon {
+		from {
+			transform: skewY(-20deg) translateX(100%);
+		}
+		to {
+			transform: skewY(-20deg) translateX(0);
+		}
+	}
+}

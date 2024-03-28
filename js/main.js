@@ -11,6 +11,7 @@ const router = {
 		// Main
 		'/': renderHomePage,
 		'/home': renderHomePage,
+		'/whoami': renderWhoAmIPage,
 	},
 
 	navigate: function(route) {
@@ -137,26 +138,27 @@ window.addEventListener('DOMContentLoaded', (event) => {
 		var wave = document.getElementById('wave');
 		var style = window.getComputedStyle(panel);
 
-		if (style.left === '-300px') {
+		if (style.left === '-450px') {
 			img.src = 'img/menuClose.svg';
 			panel.style.transition = 'left 0.8s ease';
 			panel.style.left = '0px';
 			wave.style.transition = 'left 0.8s ease';
-			wave.style.left = '300px';
-			wave.style.zIndex = '2';
+			setTimeout(function() {
+				wave.style.left = '300px';
+			}, 0);
 		} else {
 			panel.addEventListener('transitionend', function hideWave() {
-				wave.style.zIndex = '-1';
 				panel.removeEventListener('transitionend', hideWave);
 			});
 			img.src = 'img/menuOpen.svg';
-			panel.style.left = '-300px';
-			panel.style.transition = 'left 0.25s linear';
-			wave.style.left = '0px';
-			wave.style.transition = 'left 0.25s linear';
+			panel.style.left = '-450px';
+			panel.style.transition = 'left 0.3s linear';
+			wave.style.left = '-150px';
+			wave.style.transition = 'left 0.3s linear';
 		}
 	});
 
+	// Handle the navigation when the user clicks on a link
 	document.body.addEventListener('click', function(event) {
 		var img = document.getElementById('menu-img');
 		var panel = document.getElementById('menu-panel');
@@ -166,14 +168,37 @@ window.addEventListener('DOMContentLoaded', (event) => {
 		// If the menu is open and the user clicks outside the menu, close it
 		if (style.left === '0px' && !panel.contains(event.target) && !event.target.matches('#menu')) {
 			panel.addEventListener('transitionend', function hideWave() {
-				wave.style.zIndex = '-1';
 				panel.removeEventListener('transitionend', hideWave);
 			});
 			img.src = 'img/menuOpen.svg';
-			panel.style.left = '-300px';
-			panel.style.transition = 'left 0.25s linear';
-			wave.style.left = '0px';
-			wave.style.transition = 'left 0.25s linear';
+			panel.style.left = '-450px';
+			panel.style.transition = 'left 0.3s linear';
+			wave.style.left = '-150px';
+			wave.style.transition = 'left 0.3s linear';
 		}
 	});
+
+	// Get the menu links
+	var menuLinks = document.querySelectorAll('#menu-panel a');
+
+	// Add a click event listener to each link
+	for (var i = 0; i < menuLinks.length; i++) {
+		menuLinks[i].addEventListener('click', function() {
+			var img = document.getElementById('menu-img');
+			var panel = document.getElementById('menu-panel');
+			var wave = document.getElementById('wave');
+			var style = window.getComputedStyle(panel);
+
+			if (style.left === '0px') {
+				panel.addEventListener('transitionend', function hideWave() {
+					panel.removeEventListener('transitionend', hideWave);
+				});
+				img.src = 'img/menuOpen.svg';
+				panel.style.left = '-450px';
+				panel.style.transition = 'left 0.3s linear';
+				wave.style.left = '-150px';
+				wave.style.transition = 'left 0.3s linear';
+			}
+		});
+	}
 });
