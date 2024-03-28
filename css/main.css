@@ -135,6 +135,7 @@ a {
 	opacity: 0.7;
 	transition: color 0.3s ease, transform 0.3s ease;
 	transform-origin: left;
+	width: fit-content;
 }
 
 #menu-content a:hover {
@@ -142,10 +143,21 @@ a {
 	transform: scale(1.2);
 }
 
+#menu-img-42 {
+	width: 15px;
+	height: 15px;
+	margin-left: 10px;
+	padding: 1px;
+	background-color: white;
+	border-radius: 25%;
+	vertical-align: middle;
+}
+
 #menu-contact-img {
 	width: 15px;
 	height: 15px;
 	margin-right: 10px;
+	vertical-align: middle;
 }
 
 #external-link:hover::after {
