@@ -183,6 +183,13 @@ a {
 	vertical-align: middle;
 }
 
+#menu-contact-kofi {
+	width: 139px;
+	height: 21.8px;
+	vertical-align: middle;
+	margin-top: 5px;
+}
+
 #external-link:hover::after {
 	content: "";
 	display: inline-block;
@@ -190,6 +197,7 @@ a {
 	width: 12px;
 	height: 12px;
 	margin-left: 5px;
+	vertical-align: middle;
 }
 
 #external-link-text:hover::after {
@@ -199,6 +207,7 @@ a {
 	width: 12px;
 	height: 12px;
 	margin-left: 5px;
+	vertical-align: middle;
 }
 
 #credits {
