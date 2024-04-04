@@ -57,9 +57,9 @@ async function navigateTo(event, route) {
 	event.preventDefault();
 
 	// Don't redirect if the user is already on the page
-    if (event.target.closest('#menu-panel') && window.location.pathname === route) {
-        return;
-    }
+	if (event.target.closest('#menu-panel') && window.location.pathname === route) {
+		return;
+	}
 
 	router.navigate(route);
 }
@@ -140,47 +140,53 @@ window.addEventListener('DOMContentLoaded', (event) => {
 		this.classList.add('clicked');
 
 		var img = document.getElementById('menu-img');
-		var panel = document.getElementById('menu-panel');
-		var wave = document.getElementById('wave');
-		var style = window.getComputedStyle(panel);
+		// var panel = document.getElementById('menu-panel');
+		// var wave = document.getElementById('wave');
+		var container = document.getElementById('menu-container');
+		// var style = window.getComputedStyle(panel);
+		var style = window.getComputedStyle(container);
 
 		if (style.left === '-450px') {
+			console.log("menu opening")
 			img.src = 'img/menuClose.svg';
-			panel.style.transition = 'left 0.8s ease';
-			panel.style.left = '0px';
-			wave.style.transition = 'left 0.8s ease';
-			setTimeout(function() {
-				wave.style.left = '300px';
-			}, 0);
+			container.style.transition = 'left 0.8s ease';
+			container.style.left = '0px';
+			// wave.style.transition = 'left 0.8s ease';
+			// setTimeout(function() {
+			// 	wave.style.left = '300px';
+			// }, 0);
 		} else {
-			panel.addEventListener('transitionend', function hideWave() {
-				panel.removeEventListener('transitionend', hideWave);
-			});
+			console.log("menu closing")
+			// container.addEventListener('transitionend', function hideWave() {
+			// 	container.removeEventListener('transitionend', hideWave);
+			// });
 			img.src = 'img/menuOpen.svg';
-			panel.style.left = '-450px';
-			panel.style.transition = 'left 0.3s linear';
-			wave.style.left = '-150px';
-			wave.style.transition = 'left 0.3s linear';
+			container.style.left = '-450px';
+			container.style.transition = 'left 0.3s linear';
+			// wave.style.left = '-150px';
+			// wave.style.transition = 'left 0.3s linear';
 		}
 	});
 
 	// Handle the navigation when the user clicks on a link
 	document.body.addEventListener('click', function(event) {
 		var img = document.getElementById('menu-img');
-		var panel = document.getElementById('menu-panel');
-		var wave = document.getElementById('wave');
-		var style = window.getComputedStyle(panel);
+		// var panel = document.getElementById('menu-panel');
+		// var wave = document.getElementById('wave');
+		var container = document.getElementById('menu-container');
+		// var style = window.getComputedStyle(panel);
+		var style = window.getComputedStyle(container);
 	
 		// If the menu is open and the user clicks outside the menu, close it
-		if (style.left === '0px' && !panel.contains(event.target) && !event.target.matches('#menu')) {
-			panel.addEventListener('transitionend', function hideWave() {
-				panel.removeEventListener('transitionend', hideWave);
-			});
+		if (style.left === '0px' && !container.contains(event.target) && !event.target.matches('#menu')) {
+			// container.addEventListener('transitionend', function hideWave() {
+			// 	container.removeEventListener('transitionend', hideWave);
+			// });
 			img.src = 'img/menuOpen.svg';
-			panel.style.left = '-450px';
-			panel.style.transition = 'left 0.3s linear';
-			wave.style.left = '-150px';
-			wave.style.transition = 'left 0.3s linear';
+			container.style.left = '-450px';
+			container.style.transition = 'left 0.3s linear';
+			// wave.style.left = '-150px';
+			// wave.style.transition = 'left 0.3s linear';
 		}
 	});
 
@@ -191,19 +197,21 @@ window.addEventListener('DOMContentLoaded', (event) => {
 	for (var i = 0; i < menuLinks.length; i++) {
 		menuLinks[i].addEventListener('click', function() {
 			var img = document.getElementById('menu-img');
-			var panel = document.getElementById('menu-panel');
-			var wave = document.getElementById('wave');
-			var style = window.getComputedStyle(panel);
+			// var panel = document.getElementById('menu-panel');
+			// var wave = document.getElementById('wave');
+			var container = document.getElementById('menu-container');
+			// var style = window.getComputedStyle(panel);
+			var style = window.getComputedStyle(container);
 
 			if (style.left === '0px') {
-				panel.addEventListener('transitionend', function hideWave() {
-					panel.removeEventListener('transitionend', hideWave);
-				});
+				// panel.addEventListener('transitionend', function hideWave() {
+				// 	panel.removeEventListener('transitionend', hideWave);
+				// });
 				img.src = 'img/menuOpen.svg';
-				panel.style.left = '-450px';
-				panel.style.transition = 'left 0.3s linear';
-				wave.style.left = '-150px';
-				wave.style.transition = 'left 0.3s linear';
+				container.style.left = '-450px';
+				container.style.transition = 'left 0.3s linear';
+				// wave.style.left = '-150px';
+				// wave.style.transition = 'left 0.3s linear';
 			}
 		});
 	}
