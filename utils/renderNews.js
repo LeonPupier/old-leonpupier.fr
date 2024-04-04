@@ -1,10 +1,10 @@
 function renderNews(img, title, message) {
 	return `
-		<div id="news">
-			<img id="news-img" src="${img}" alt="News Image">
-			<div id="news-content">
-				<h3 id="text">${title}</h2>
-				<p id="text">${message}</p>
+		<div class="news">
+			<img class="news-img" src="${img}" alt="News Image">
+			<div class="news-content">
+				<h3 class="text">${title}</h2>
+				<p class="text">${message}</p>
 			</div>
 		</div>
 	`;
