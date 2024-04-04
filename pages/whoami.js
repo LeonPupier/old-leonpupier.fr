@@ -1,22 +1,22 @@
 function renderWhoAmIPage() {    
 	document.getElementById('app').innerHTML = `
-		<div id="background-whoami"></div>
+		<div class="background-whoami"></div>
 
 		<div class="sections">
 			<div class="section">
 				<div class="section-content">
 
-					<img id="user-img" src="img/leon.jpg" alt="User picture" />
+					<img class="user-img" src="img/leon.jpg" alt="User picture" />
 
 					<h2><span>Who am I?</span></h2>
-					<p id="paragraph">
+					<p class="paragraph">
 					My name is Léon Pupier and I am a french student at 
-					<span id="external-link-text" onclick="window.open('https://www.42.fr/', '_blank');">school 42</span>.
+					<span class="external-link-text" onclick="window.open('https://www.42.fr/', '_blank');">school 42</span>.
 					My passion for computer science and more particularly the creation of programs and software solutions
 					pushes me to make my creations accessible while trying to provide a quality similar to a professional work.
 					</p>
 					
-					<img id="scroll-img" src="img/scroll.png" alt="Scoll down" />
+					<img class="scroll-img" src="img/scroll.png" alt="Scoll down" />
 
 				</div>
 				<div class="ribbon"></div>
@@ -25,21 +25,23 @@ function renderWhoAmIPage() {
 			<div class="section">
 				<div class="section-content">
 
-					<img id="projects-img" src="img/projects.png" alt="Projects picture" />
+					<img class="projects-img" src="img/projects.png" alt="Projects picture" />
 
 					<h2><span>Why a website?</span></h2>
-					<p id="paragraph">
+					<p class="paragraph">
 					You can find my main projects on this website, as well as a non-exhaustive list of my skills.
 					Not forgetting an overview of my career.
 					This site also serves as a showcase and contact point.
 					Thank you for taking the time to look at my creations, I hope to continue producing quality work.
 					</p>
 					</br>
-					<p id="paragraph-sign"><span>Léon Pupier</span></p>
+					<p class="paragraph-sign"><span>Léon Pupier</span></p>
 				
 				</div>
 			</div>
 		</div>
+
+		<style> body {overflow: hidden;} </style>
 	`;
 
 	const sections = document.querySelectorAll('.section');
