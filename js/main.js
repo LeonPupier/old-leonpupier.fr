@@ -55,6 +55,12 @@ const router = {
 // When the user clicks on a link, navigate to the given route
 async function navigateTo(event, route) {
 	event.preventDefault();
+
+	// Don't redirect if the user is already on the page
+    if (event.target.closest('#menu-panel') && window.location.pathname === route) {
+        return;
+    }
+
 	router.navigate(route);
 }
 
