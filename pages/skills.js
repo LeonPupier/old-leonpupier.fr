@@ -18,7 +18,7 @@ function renderSkillsPage() {
 				{title: "HTML", description: "Gained proficiency in HTML for web development."},
 				{title: "CSS", description: "Mastered CSS for website styling."},
 				{title: "3D modeling", description: "Learned 3D modeling for game design.", links: [
-					{title: "Blender", img: "img/blender.svg", url: "https://www.blender.org/"},
+					{title: "Blender", img: "img/Blender.svg", url: "https://www.blender.org/"},
 				]},
 			],
 		},
