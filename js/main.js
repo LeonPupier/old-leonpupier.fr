@@ -12,6 +12,7 @@ const router = {
 		'/': renderHomePage,
 		'/home': renderHomePage,
 		'/whoami': renderWhoAmIPage,
+		'/skills': renderSkillsPage,
 	},
 
 	navigate: function(route) {

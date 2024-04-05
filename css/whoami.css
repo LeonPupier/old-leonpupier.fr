@@ -1,15 +1,5 @@
 /* WHO AM I */
 
-.background-whoami {
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	z-index: -1;
-	background: linear-gradient(270deg, #ff0000, #0000ff);
-	background-size: 200% 200%;
-	animation: Gradient 5s ease infinite;
-}
-
 .sections {
 	overflow: hidden;
 }

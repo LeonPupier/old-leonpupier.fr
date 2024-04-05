@@ -1,0 +1,158 @@
+/* SKILLS */
+
+.hidden {
+	opacity: 0;
+}
+
+.timeline {
+	list-style-type: none;
+	position: relative;
+	padding-left: 90px;
+	transition: opacity 1s ease-in-out;
+}
+
+.timeline-line-start,
+.timeline-line,
+.timeline-line-end {
+	position: absolute;
+	height: 100%;
+	width: 3px;
+	transform: translateX(-50%);
+	opacity: 0.7;
+}
+
+.timeline-line-start {
+	background: linear-gradient(to top, white, transparent);
+}
+
+.timeline-line {
+	background: white;
+}
+
+.timeline-line-end {
+	background: linear-gradient(to bottom, white, transparent);
+}
+
+.timeline-item {
+	display: flex;
+	position: relative;
+	padding-bottom: 50px;
+}
+
+.timeline-point {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: white;
+	transform: translate(-50%, -50%);
+	margin-top: 25vh;
+}
+
+.timeline-year {
+	position: absolute;
+	left: -40px;
+	top: 0;
+	transform: translate(-50%, -50%);
+	color: white;
+	opacity: 0.7;
+	margin-top: 25vh;
+}
+
+.timeline-content-skills {
+	display: flex;
+	flex-direction: column;
+	margin-top: 25vh;
+}
+
+.timeline-content {
+	margin-left: 60px;
+	margin-right: 60px;
+	margin-top: 60px;
+	opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.timeline-content.visible {
+    opacity: 1;
+}
+
+.timeline-content:first-child {
+	margin-top: 0;
+}
+
+.skill-title {
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+
+.skill-description {
+	font-size: 16px;
+}
+
+.timeline-links {
+	display: flex;
+	flex-direction: row;
+	margin-top: 20px;
+}
+
+.timeline-link {
+	display: flex;
+	align-items: center;
+	background-color: rgba(255, 255, 255, 0.3);
+	padding: 5px;
+	border-radius: 5px;
+	width: fit-content;
+	margin-right: 10px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-link-img {
+	width: 25px;
+	height: 25px;
+	margin-right: 10px;
+	vertical-align: middle;
+}
+
+.timeline-link-text {
+	opacity: 0.6;
+	margin-right: 10px;
+}
+
+.timeline-project {
+	display: flex;
+	align-items: center;
+	background-color: rgba(255, 255, 255, 0.3);
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 15px;
+	padding-right: 15px;
+	border-radius: 10px;
+	width: fit-content;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+	margin-top: 10px;
+	opacity: 0.7;
+}
+
+/* Media Query */
+
+@media screen and (max-width: 768px) {
+	.timeline-links {
+		flex-direction: column;
+	}
+
+	.timeline-link {
+		margin-bottom: 10px;
+	}
+
+	.timeline-content {
+		margin-left: 30px;
+		margin-right: 30px;
+	}
+
+	.timeline {
+		padding-left: 70px;
+	}
+}

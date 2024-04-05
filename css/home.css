@@ -1,16 +1,4 @@
-/* ANIMATED BACKGROUND */
-
-.animated-background {
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	z-index: 0;
-	background: linear-gradient(270deg, #ff0000, #0000ff);
-	background-size: 200% 200%;
-	animation: Gradient 5s ease infinite;
-}
+/* HOME */
 
 .rotating-circle {
 	position: absolute;

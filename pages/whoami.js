@@ -1,6 +1,6 @@
 function renderWhoAmIPage() {    
 	document.getElementById('app').innerHTML = `
-		<div class="background-whoami"></div>
+		<div class="animated-background"></div>
 
 		<div class="sections">
 			<div class="section">
@@ -133,4 +133,10 @@ function renderWhoAmIPage() {
 		scrollSection(currentSectionIndex);
 		startTouchY = touchY;
 	}, { passive: false });
+
+	// Handle the scoll down when the user click on the scoll image
+	document.querySelector('.scroll-img').addEventListener('click', function() {
+		currentSectionIndex = Math.min(currentSectionIndex + 1, sections.length - 1);
+		scrollSection(currentSectionIndex);
+	});
 }
