@@ -3,9 +3,7 @@
 > [!WARNING]
 > This website is still under development.
 
-It's the new version of the existing [leonpupier.fr](https://leonpupier.fr).
-</br>
-You can see the improvements at the following address [leonpupier.github.io](https://leonpupier.github.io).
+You can see the improvements at the following address [leonpupier.fr](https://leonpupier.fr).
 
 Thanks for your support,
 
