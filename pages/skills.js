@@ -125,6 +125,9 @@ function renderSkillsPage() {
 		</ul>
 	`;
 
+	const bg = document.getElementById('animated-background');
+	bg.style.height = `${window.innerHeight}px`;
+
 	// Add the observer to animate the skills page
 	const observer = new IntersectionObserver((entries) => {
 		entries.forEach(entry => {
