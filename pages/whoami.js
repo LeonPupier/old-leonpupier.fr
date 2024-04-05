@@ -1,4 +1,6 @@
-function renderWhoAmIPage() {    
+function renderWhoAmIPage() {
+	window.scrollTo(0, 0);
+
 	document.getElementById('app').innerHTML = `
 		<div class="animated-background"></div>
 
