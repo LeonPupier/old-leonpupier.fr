@@ -1,4 +1,6 @@
 function renderSkillsPage() {
+	window.scrollTo(0, 0);
+	
 	// Skills list
 	const skills = [
 		{
