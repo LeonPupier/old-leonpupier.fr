@@ -11,8 +11,13 @@ const router = {
 		// Main
 		'/': renderHomePage,
 		'/home': renderHomePage,
+
+		// About me
 		'/whoami': renderWhoAmIPage,
 		'/skills': renderSkillsPage,
+
+		// Projects
+		'/projects/mensible': renderMensiblePage,
 	},
 
 	navigate: function(route) {
@@ -42,7 +47,7 @@ const router = {
 		
 		} else {
 			// If no route is found
-			console.error('Route not found:', route);
+			router.navigate('/');
 		}
 	}
 };
@@ -99,9 +104,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
 	if (sessionStorage.redirect) {
 		const redirectURL = sessionStorage.redirect;
 		delete sessionStorage.redirect;
-		router.navigate(redirectURL.replace(location.origin, ''));
+		const cleanURL = redirectURL.replace(location.origin, '').replace(/\/$/, '');
+		router.navigate(cleanURL);
 	} else {
-		router.navigate(window.location.pathname);
+		const cleanURL = window.location.pathname.replace(/\/$/, '');
+		router.navigate(cleanURL);
 	}
 
 
@@ -145,11 +152,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
 		var style = window.getComputedStyle(container);
 
 		if (style.left === '-450px') {
-			img.src = 'img/menuClose.svg';
+			img.src = '/img/menuClose.svg';
 			container.style.transition = 'left 0.8s ease';
 			container.style.left = '0px';
 		} else {
-			img.src = 'img/menuOpen.svg';
+			img.src = '/img/menuOpen.svg';
 			container.style.left = '-450px';
 			container.style.transition = 'left 0.3s linear';
 		}
@@ -163,7 +170,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 	
 		// If the menu is open and the user clicks outside the menu, close it
 		if (style.left === '0px' && !container.contains(event.target) && !event.target.matches('#menu')) {
-			img.src = 'img/menuOpen.svg';
+			img.src = '/img/menuOpen.svg';
 			container.style.left = '-450px';
 			container.style.transition = 'left 0.3s linear';
 		}
@@ -180,7 +187,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 			var style = window.getComputedStyle(container);
 
 			if (style.left === '0px') {
-				img.src = 'img/menuOpen.svg';
+				img.src = '/img/menuOpen.svg';
 				container.style.left = '-450px';
 				container.style.transition = 'left 0.3s linear';
 			}

@@ -8,7 +8,7 @@ function renderWhoAmIPage() {
 			<div class="section">
 				<div class="section-content">
 
-					<img class="user-img" src="img/leon.jpg" alt="User picture" />
+					<img class="user-img" src="img/leon.jpg" alt="User picture" draggable="false" />
 
 					<h2><span>Who am I?</span></h2>
 					<p class="paragraph">
@@ -18,7 +18,7 @@ function renderWhoAmIPage() {
 					pushes me to make my creations accessible while trying to provide a quality similar to a professional work.
 					</p>
 					
-					<img class="scroll-img" src="img/scroll.png" alt="Scoll down" />
+					<img class="scroll-img" src="img/scroll.png" alt="Scoll down" draggable="false" />
 
 				</div>
 				<div class="ribbon"></div>
@@ -27,7 +27,7 @@ function renderWhoAmIPage() {
 			<div class="section">
 				<div class="section-content">
 
-					<img class="projects-img" src="img/projects.png" alt="Projects picture" />
+					<img class="projects-img" src="img/website.png" alt="Projects picture" draggable="false" />
 
 					<h2><span>Why a website?</span></h2>
 					<p class="paragraph">

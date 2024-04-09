@@ -1,6 +1,6 @@
 function renderSkillsPage() {
 	window.scrollTo(0, 0);
-	
+
 	// Skills list
 	const skills = [
 		{
@@ -11,14 +11,21 @@ function renderSkillsPage() {
 				{title: "Python", description: "Proficient in Python, with ongoing learning.", projects: [
 					{title: "Mensible", url: "/projects/mensible"},
 					{title: "Reminder", url: "/projects/reminder"},
+					{title: "Transcendence", url: "/projects/transcendence", is42: true},
 				]},
 			],
 		},
 		{
 			year: '2019', 
 			skills: [
-				{title: "HTML", description: "Gained proficiency in HTML for web development."},
-				{title: "CSS", description: "Mastered CSS for website styling."},
+				{title: "HTML", description: "Gained proficiency in HTML for web development.", projects: [
+					{title: "Reminder", url: "/projects/reminder"},
+					{title: "Transcendence", url: "/projects/transcendence", is42: true},
+				]},
+				{title: "CSS", description: "Mastered CSS for website styling.", projects: [
+					{title: "Reminder", url: "/projects/reminder"},
+					{title: "Transcendence", url: "/projects/transcendence", is42: true},
+				]},
 				{title: "3D modeling", description: "Learned 3D modeling for game design.", links: [
 					{title: "Blender", img: "img/Blender.svg", url: "https://www.blender.org/"},
 				]},
@@ -27,11 +34,8 @@ function renderSkillsPage() {
 		{
 			year: '2020', 
 			skills: [
-				{title: "SQL", description: "Mastered SQL for database management."},
-				{title: "Game Engine", description: "Learned game engine for game development.", links: [
-					{title: "Unreal Engine", img: "img/UE.svg", url: "https://www.unrealengine.com/"},
-					{title: "Unity", img: "img/Unity.svg", url: "https://unity.com/"},
-					{title: "Godot", img: "img/Godot.svg", url: "https://godotengine.org/"},
+				{title: "SQL", description: "Mastered SQL for database management.", projects: [
+					{title: "Transcendence", url: "/projects/transcendence", is42: true},
 				]},
 				{title: "Digital audio", description: "Gained skills in digital audio for sound design.", links: [
 					{title: "FL Studio", img: "img/FLStudio.png", url: "https://www.image-line.com/"},
@@ -41,14 +45,19 @@ function renderSkillsPage() {
 			],
 		},
 		{
-			year: '2021', 
+			year: '2021',
 			skills: [
-				{title: "C", description: "Developed proficiency in C for system programming."},
+				{title: "Game Engine", description: "Learned game engine for game development.", links: [
+					{title: "Unreal Engine", img: "img/UE.svg", url: "https://www.unrealengine.com/"},
+					{title: "Unity", img: "img/Unity.svg", url: "https://unity.com/"},
+					{title: "Godot", img: "img/Godot.svg", url: "https://godotengine.org/"},
+				]},
 			],
 		},
 		{
 			year: '2022', 
 			skills: [
+				{title: "C", description: "Developed proficiency in C for system programming."},
 				{title: "C++", description: "Mastered C++ for software development."},
 			],
 		},
@@ -90,7 +99,7 @@ function renderSkillsPage() {
 						<div class="timeline-links">
 							${skill.links ? skill.links.map(link => `
 								<a class="timeline-link" data-ignore-click href="${link.url}" target="_blank">
-									<img class="timeline-link-img" src="${link.img}" alt="${link.title} picture">
+									<img class="timeline-link-img" src="${link.img}" alt="${link.title} picture" draggable="false">
 									<span class="timeline-link-text">${link.title}</span>
 								</a>
 							`).join('') : ''}
@@ -100,7 +109,7 @@ function renderSkillsPage() {
 								<p class="text">Some project(s) on the website showcasing this skill:</p>
 								${skill.projects.map(project => `
 									<a class="timeline-project" data-route="${project.url}">
-										• ${project.title} ${project.is42 ? '<img id="menu-img-42" src="img/42.svg">' : ''}
+										• ${project.title} ${project.is42 ? '<img id="menu-img-42" src="img/42.svg" draggable="false">' : ''}
 									</a>
 								`).join('')}` : ''}
 						</div>

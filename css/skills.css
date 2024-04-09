@@ -7,7 +7,7 @@
 .timeline {
 	list-style-type: none;
 	position: relative;
-	padding-left: 90px;
+	padding-left: 120px;
 	transition: opacity 1s ease-in-out;
 }
 
