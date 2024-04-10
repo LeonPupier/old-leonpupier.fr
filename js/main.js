@@ -17,6 +17,7 @@ const router = {
 		'/skills': renderSkillsPage,
 
 		// Projects
+		'/projects/aimshot': renderAimShotPage,
 		'/projects/mensible': renderMensiblePage,
 		'/projects/reminder': renderReminderPage,
 	},

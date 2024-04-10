@@ -162,3 +162,48 @@
 		padding-right: 10px;
 	}
 }
+
+.background-video {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	min-width: 100%;
+	min-height: 100%;
+	z-index: -1;
+}
+
+/* AIMSHOT */
+
+.aimshot-disclaimer {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 20px;
+	background-color: rgba(0, 0, 0, 0.5);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+}
+
+.aimshot-disclaimer h1 {
+	color: white;
+	margin-bottom: 20px;
+	opacity: 0.9;
+}
+
+.aimshot-disclaimer p {
+	color: white;
+	opacity: 0.9;
+}
+
+/* Media Query */
+
+@media screen and (max-width: 768px) {
+	.background-video {
+		min-height: 120%;
+	}
+
+	.aimshot-disclaimer {
+		width: 80%;
+	}
+}
