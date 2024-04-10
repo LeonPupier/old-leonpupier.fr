@@ -18,6 +18,7 @@ const router = {
 
 		// Projects
 		'/projects/mensible': renderMensiblePage,
+		'/projects/reminder': renderReminderPage,
 	},
 
 	navigate: function(route) {

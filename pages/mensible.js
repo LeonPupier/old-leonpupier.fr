@@ -5,12 +5,12 @@ function renderMensiblePage() {
 		<div class="animated-background"></div>
 		<div class="static-background"></div>
 
-		<div class="mensible-page">
+		<div class="project-page">
 			<div class="box-title">
-				<img class="mensible-image" src="/img/mensible.png" draggable="false">
-				<h2 class="mensible-title">Mensible</h2>
+				<img class="project-image" src="/projects/mensible/logo.png" draggable="false">
+				<h2 class="project-title">Mensible</h2>
 			</div>
-			<p class="mensible-creators">© Developped by Léon Pupier</p>
+			<p class="project-creators">© Developped by Léon Pupier</p>
 
 			<img class="gallery-image" src="/projects/mensible/home.png" draggable="false" alt="Mensible home page">
 			<div class="gallery-infos">
