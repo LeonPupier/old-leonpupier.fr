@@ -58,9 +58,11 @@ function renderMensiblePage() {
 			overlay.appendChild(image);
 
 			document.body.appendChild(overlay);
+			document.body.style.overflow = 'hidden';
 
 			overlay.addEventListener('click', function() {
 				document.body.removeChild(overlay);
+				document.body.style.overflow = 'auto';
 			});
 		});
 	}
