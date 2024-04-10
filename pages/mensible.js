@@ -10,6 +10,7 @@ function renderMensiblePage() {
 				<img class="mensible-image" src="/img/mensible.png" draggable="false">
 				<h2 class="mensible-title">Mensible</h2>
 			</div>
+			<p class="mensible-creators">© Developped by Léon Pupier</p>
 
 			<img class="gallery-image" src="/projects/mensible/home.png" draggable="false" alt="Mensible home page">
 			<div class="gallery-infos">
@@ -38,25 +39,29 @@ function renderMensiblePage() {
 					out of the software and adapt it to your needs.
 				</p>
 			</div>
+
+			<a data-ignore-click class="project-see-more-link" href="https://github.com/LeonPupier/mensible">
+				See more on GitHub →
+			</a>
 		</div>
 	`;
 
 	// Handle the click on an image on mobile
 	const galleryImages = document.querySelectorAll('.gallery-image');
-    for (let i = 0; i < galleryImages.length; i++) {
-        galleryImages[i].addEventListener('click', function() {
-            const image = document.createElement('img');
-            image.src = galleryImages[i].src;
-        
-            const overlay = document.createElement('div');
-            overlay.classList.add('overlay');
-            overlay.appendChild(image);
+	for (let i = 0; i < galleryImages.length; i++) {
+		galleryImages[i].addEventListener('click', function() {
+			const image = document.createElement('img');
+			image.src = galleryImages[i].src;
+		
+			const overlay = document.createElement('div');
+			overlay.classList.add('overlay');
+			overlay.appendChild(image);
 
-            document.body.appendChild(overlay);
+			document.body.appendChild(overlay);
 
-            overlay.addEventListener('click', function() {
-                document.body.removeChild(overlay);
-            });
-        });
-    }
+			overlay.addEventListener('click', function() {
+				document.body.removeChild(overlay);
+			});
+		});
+	}
 }
