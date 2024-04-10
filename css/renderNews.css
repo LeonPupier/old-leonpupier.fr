@@ -12,6 +12,20 @@
 	margin-right: 25%;
 	margin-top: 150px;
 	margin-bottom: 50px;
+	animation: slideInNews 1s forwards;
+	animation-delay: 1s;
+	opacity: 0;
+}
+
+@keyframes slideInNews {
+	0% {
+		transform: translateY(50px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
 }
 
 .news-img {
