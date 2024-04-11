@@ -20,6 +20,7 @@ const router = {
 		'/projects/aimshot': renderAimShotPage,
 		'/projects/mensible': renderMensiblePage,
 		'/projects/reminder': renderReminderPage,
+		'/projects/transcendence': renderTranscendencePage,
 	},
 
 	navigate: function(route) {

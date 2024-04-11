@@ -3,7 +3,6 @@ function renderMensiblePage() {
 
 	document.getElementById('app').innerHTML = `
 		<div class="animated-background"></div>
-		<div class="static-background"></div>
 
 		<div class="project-page">
 			<div class="box-title">
