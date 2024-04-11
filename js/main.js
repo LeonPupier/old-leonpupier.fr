@@ -103,6 +103,9 @@ window.addEventListener('popstate', function(event) {
 // --------------------------------------------------------------------------------
 
 window.addEventListener('DOMContentLoaded', (event) => {
+	// Get the body element
+	const body = document.body;
+
 	// Render the home page
 	if (sessionStorage.redirect) {
 		const redirectURL = sessionStorage.redirect;
@@ -158,10 +161,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
 			img.src = '/img/menuClose.svg';
 			container.style.transition = 'left 0.8s ease';
 			container.style.left = '0px';
+			body.style.overflow = 'hidden';
 		} else {
 			img.src = '/img/menuOpen.svg';
 			container.style.left = '-450px';
 			container.style.transition = 'left 0.3s linear';
+			body.style.overflow = 'auto';
 		}
 	});
 
@@ -176,6 +181,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 			img.src = '/img/menuOpen.svg';
 			container.style.left = '-450px';
 			container.style.transition = 'left 0.3s linear';
+			body.style.overflow = 'auto';
 		}
 	});
 
@@ -193,6 +199,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 				img.src = '/img/menuOpen.svg';
 				container.style.left = '-450px';
 				container.style.transition = 'left 0.3s linear';
+				body.style.overflow = 'auto';
 			}
 		});
 	}
