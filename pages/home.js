@@ -14,7 +14,7 @@ function renderHomePage() {
 			${renderNews(
 				'img/news.jpeg',
 				'News',
-				"I'm currently working on the website, I'm adding new features and improving the existing ones."
+				"I'm currently working for a company. Please contact me if you have any questions or need help with a project."
 			)}
 		</div>
 	`;
