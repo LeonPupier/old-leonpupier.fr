@@ -2,8 +2,6 @@ function renderAimShotPage() {
 	window.scrollTo(0, 0);
 
 	document.getElementById('app').innerHTML = `
-		<div class="animated-background"></div>
-
 		<video autoplay muted loop playsinline class="background-video">
 			<source src="/video/glock.mp4" type="video/mp4">
 		</video>

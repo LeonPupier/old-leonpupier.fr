@@ -31,7 +31,7 @@
 }
 
 .project-title {
-	color: white;
+	color: #2b2928;
 	opacity: 0.8;
 	margin-left: 25px;
 }
@@ -43,7 +43,7 @@
 	justify-content: center;
 	align-items: center;
 	margin-top: 15px;
-	color: white;
+	color: #2b2928;
 	opacity: 0.5;
 	font-size: 0.8em;
 	margin-bottom: 25px;
@@ -60,7 +60,7 @@
 	align-items: center;
 	margin-top: 15px;
 	margin-bottom: 50px;
-	color: white;
+	color: #2b2928;
 	opacity: 0.5;
 	font-size: 0.8em;
 	margin-left: 10%;
@@ -111,14 +111,14 @@
 .gallery-button {
 	background-color: rgba(0, 0, 0, 0.3);
 	border-radius: 10px;
-	color: white;
+	color: #2b2928;
 	border: none;
 	padding: 10px;
 	animation: fadeIn 2s;
 }
 
 .gallery-counter {
-	color: white;
+	color: #2b2928;
 	opacity: 0.8;
 	margin-left: 10px;
 	margin-right: 10px;
@@ -148,7 +148,7 @@
 .gallery-category {
 	width: 95%;
 	margin-top: 20px;
-	color: white;
+	color: #2b2928;
 	opacity: 0.8;
 }
 
@@ -156,7 +156,7 @@
 	width: 95%;
 	margin-top: 20px;
 	margin-bottom: 20px;
-	color: white;
+	color: #2b2928;
 	opacity: 0.7;
 }
 

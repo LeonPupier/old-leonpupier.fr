@@ -106,6 +106,16 @@ window.addEventListener('DOMContentLoaded', (event) => {
 	// Get the body element
 	const body = document.body;
 
+	// Create a new FOG instance
+	VANTA.FOG({
+		el: "#background",
+		mouseControls: true,
+		touchControls: true,
+		gyroControls: false,
+		minHeight: 200.00,
+		minWidth: 200.00
+	});
+
 	// Render the home page
 	if (sessionStorage.redirect) {
 		const redirectURL = sessionStorage.redirect;

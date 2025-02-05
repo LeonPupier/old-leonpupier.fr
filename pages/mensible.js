@@ -2,8 +2,6 @@ function renderMensiblePage() {
 	window.scrollTo(0, 0);
 
 	document.getElementById('app').innerHTML = `
-		<div class="animated-background"></div>
-
 		<div class="project-page">
 			<div class="box-title">
 				<img class="project-image" src="/projects/mensible/logo.png" draggable="false">

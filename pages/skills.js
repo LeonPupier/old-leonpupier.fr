@@ -130,7 +130,6 @@ function renderSkillsPage() {
 
 	// Render the skills page
 	document.getElementById('app').innerHTML = `
-		<div class="animated-background"></div>
 		<ul class="timeline">
 			${skillsHtml}
 		</ul>

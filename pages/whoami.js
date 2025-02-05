@@ -2,8 +2,6 @@ function renderWhoAmIPage() {
 	window.scrollTo(0, 0);
 
 	document.getElementById('app').innerHTML = `
-		<div class="animated-background"></div>
-
 		<div class="sections">
 			<div class="section">
 				<div class="section-content">

@@ -2,8 +2,6 @@ function renderHomePage() {
 	window.scrollTo(0, 0);
 	
 	document.getElementById('app').innerHTML = `
-		<div class="animated-background"></div>
-
 		<div class="content-scrollable">
 			<div class="content">
 				<div class="rotating-circle"></div>

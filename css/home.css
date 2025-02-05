@@ -9,7 +9,7 @@
 	margin-top: -100px;
 	margin-left: -100px;
 	border-radius: 50%;
-	background: rgba(255, 255, 255, 0.1);
+	background: rgba(255, 255, 255, 0.2);
 	animation: rotate 5s linear infinite, shapeChange 3s ease-in-out infinite;
 }
 
@@ -45,8 +45,8 @@
 }
 
 .text {
-	color: white;
-	opacity: 0.5;
+	color: #2b2928;
+	opacity: 0.9;
 }
 
 .content .text {
@@ -65,6 +65,6 @@
 	}
 	100% {
 		clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
-		opacity: 0.5;
+		opacity: 1;
 	}
 }
