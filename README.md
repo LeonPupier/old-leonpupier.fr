@@ -1,7 +1,7 @@
 # Website
 
 > [!WARNING]
-> This website is still under development.
+> This website is no more supported.
 
 You can see the improvements at the following address [leonpupier.fr](https://leonpupier.fr).
 
